@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Favicon, se muestra en pestaña y marcadores           -->
+    <link rel="icon" href="../img/logo.ico" type="image/x-icon"> 
+
+    <!-- Link a biblioteca de íconos Font Awesome       -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="../styles/contacto.css">
+    <title>Nikkita - Talento Tech Ecommerce - Contacto</title>
+</head>
+ 
+<body>
+    <header class="header">
+        <a href="../index.html">
+            <!--  Ícono de Font Awesome      -->
+            <i class="fa-solid fa-bag-shopping icono_header"></i>
+        </a>
+        
+        <div>
+            <!-- Generamos la barra de navegación      -->
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">
+                        <i class="fa-solid fa-cart-shopping icono_header"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Versión mobile: ícono hamburguesa -->
+        <div class="mobile">
+            <a href="#">
+                <i class="fa-solid fa-cart-shopping icono_header"></i>
+            </a>
+            <i class="fas fa-outdent icono_header"></i>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="contacto">
+
+            <div class="contacto-img">
+                <img title="Máquina de escribir sobre escritorio" src="../img/maquina-escribir.jpg"
+                alt="Máquina de escribir sobre escritorio"> 
+            </div>
+            
+            <div class="contacto-form"> 
+                <h2>Por recomendaciones, consultas o pistas... escribinos: </h2>
+
+                <!-- Formulario de contacto           -->
+                <form action="https://formspree.io/f/xbdpeokp" method="POST" autocomplete="on"
+                target="_blank" id="formularioContacto">
+                    
+                    <!-- Nombre             -->
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." 
+                    required>
+
+                    <!-- Correo electrónico -->
+                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico..."
+                    required>
+
+                    <!-- Mensaje               -->
+                    <textarea id="mensaje" name="mensaje" rows="7"
+                    placeholder="Tu mensaje..." required></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- MENSAJES DE LOS LECTORES   -->
+        <section>
+            <h2>Mensajes de nuestros investigadores</h2>
+            <div class="mensajes">
+
+                <div class="mensaje-card">
+                    <p>"Envío rápido. Ya estoy en un nuevo caso !"</p>
+                    <div class="mensaje-lector">
+                        <img src="../img/poirot.jpg" alt="Poirot JM.">
+                        <div>
+                            <h4>Poirot JM.</h4>
+                            <p>Rosario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mensaje-card">
+                    <p>"Mi compra número 7. Completando la colección."</p>
+                    <div class="mensaje-lector">
+                        <img src="../img/marple.jpeg" alt="Srta. Marple">
+                        <div>
+                            <h4>Srta. Marple</h4>
+                            <p>San Martín de los Andes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mensaje-card">
+                    <p>"Un nuevo misterio está por llegar."</p>
+                    <div class="mensaje-lector">
+                        <img src="../img/hastings.jpeg" alt="Cap. Hastings">
+                        <div>
+                            <h4>Cap. Hastings</h4>
+                            <p>Formosa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <!-- Mapa           -->
+            <h2>Nos podés visitar en: </h2>
+
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6249947272004!2d-58.523583922620006!3d-34.63891580317345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc8485de34705%3A0xcd87e44ce827869a!2sAv.%20Rivadavia%2010999%2C%20C1408%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1779519022630!5m2!1ses-419!2sar" width=90% height="450" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de nuestra tienda"></iframe>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="columna">
+            <h3>Contacto:</h3>
+            <p><strong>Dirección: </strong>Av. Rivadavia 10.999. Ciudad Autónoma de Buenos Aires.</p>
+            <p><strong>Teléfono: </strong>+54 11 7368-1862</p>
+            <p><strong>Horario: </strong>Lunes a Viernes de 10 a 19 hs.</p>
+            <h3>Seguinos:</h3>
+            <div class="icono_seguinos">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+        <div class="columna"> 
+            <h3>Mi Cuenta:</h3>
+            <a href="#">Iniciar Sesión</a>
+            <a href="#">Ver Carrito</a>
+            <a href="#">Ayuda</a>
+        </div>
+
+        <div class="columna"> 
+            <h3>Medios de Pago seguros:</h3>
+            <img src="../img/pay.png" alt="Medios de Pagos">
+        </div>
+ 
+        <div class="derechos">
+            <p>© 2026 Nikkita - Talento Tech Ecommerce. Todos los derechos reservados.</p>
+        </div>
+         
+    </footer>
+    
+</body>
+</html>

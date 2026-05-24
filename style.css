@@ -1,0 +1,270 @@
+/* Importo font de  Google Fonts       */ 
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+/* Selector universal    */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #222;
+}
+
+/* HEADER    */
+.header {
+    display: flex;              /*    3 hijos: logo, nav  y mobile*/
+    justify-content: space-between;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:#d37086;
+    font-size: 1.2rem;
+    padding: 25px;
+    position: sticky;
+    top: 0;     
+}
+.header .nav {
+    display: flex;              /*    hijos: elementos de la lista */
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.header .nav li {
+    list-style: none;
+    padding: 0px 30px;
+}
+.header .nav a {
+    text-decoration: none;
+    color: white;
+}
+.header .nav a:hover {              /* PSEUDO-CLASE */
+    color: #1c2828;
+}
+
+.icono_header {
+    font-size: 1.7rem;
+    color: white;
+}
+.icono_header:hover {
+    color: #1c2828;
+}
+
+/* Botón hamburguesa - oculto en desktop, visible en mobile */
+.mobile {
+    display: none;
+    align-items: left;
+}
+
+/*  RESPONSIVE HEADER           */
+@media (max-width: 768px) {
+    .header {
+        gap: 15px;
+        padding: 20px;
+        position: static;
+    }
+    .header .nav {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+    }
+    .mobile .icono_header {
+        font-size: 1.5rem;
+        padding-left: 20px;
+    }
+}
+
+
+/* MAIN  -   HERO     */
+.hero {
+    display: flex;                      /*    2 hijos: imagen y texto */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 10px;
+    background: linear-gradient(to right, #eeeded, #dbc6c6); 
+}
+.hero img {
+    width: 50%;
+    max-width: 650px;
+    height: auto;
+}
+.hero .hero-texto {
+    display: flex;                      /*  hijos: cada una de las línas del texto */
+    flex-direction: column;
+    text-align: right;
+    padding: 0px 20px;
+}
+.hero .hero-texto h1 {
+    font-family: "Nosifer", monospace;
+    color: #a80c81;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.hero .hero-texto h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #a57d9a;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.hero .hero-texto p {
+    font-size: 1.2rem;
+}
+ 
+/*  RESPONSIVE HERO              */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    } 
+    .hero .hero-texto {
+        text-align: center;
+        padding: 20px;
+    }
+    .hero .hero-texto h1 { font-size: 1.7rem; }
+    .hero .hero-texto h2 { font-size: 1.4rem; }
+    .hero .hero-texto p { font-size: 1.1rem; }
+}
+
+@media (max-width: 576px) {
+    .hero .hero-texto h1 { font-size: 1.5rem; }
+    .hero .hero-texto h2 { font-size: 1.2rem; }
+    .hero .hero-texto p { font-size: 1rem; }
+}
+
+/* MAIN - PRODUCTOS    */
+.productos {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding: 40px 40px;
+    gap: 30px;
+}
+.productos .card-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    /* BORDER: grosor | estilo | color */
+    border: 1px solid #141313;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.productos .card-producto img {
+    width: 80%;
+}
+.productos .card-producto h5 {
+    margin-bottom: 15px;
+}
+.productos .card-producto h4 {
+    margin-top: auto;
+}
+.productos .card-producto:hover {
+    /*  Sombra eje X, eje Y, desenfoque (blur), color  */
+    box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.15);
+}
+.card-producto:hover img {
+    transform: scale(1.03);
+}
+
+.productos .card-producto .agregar {
+    display: flex;           /*    2 hijos: icono y texto "Agregar"    */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 80%;
+    padding: 10px 0;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: #0a9389;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    /* Qué vamos a afectar, qué tiempo se va a tomar, de qué manera    */
+    transition: background-color 0.7s ease;
+}
+.productos .card-producto .agregar:hover {
+    background-color: #3abeb5;
+}
+
+/*  RESPONSIVE PRODUCTOS              */
+/* No se precisa  */
+
+/*   FOOTER     */
+footer {
+    display: flex; 
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    background-color:#d37086;
+    color: white;
+    padding: 15px;
+}
+footer .columna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 30px;
+}
+footer .columna h3 { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px 0px;
+} 
+footer .columna p { 
+    margin-bottom: 3px;
+} 
+footer .columna .icono_seguinos {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+footer .columna .icono_seguinos i {
+    padding-right: 10px;
+    cursor: pointer;
+}
+footer .columna .icono_seguinos i:hover {
+   color: #1c2828;
+}
+
+footer .columna a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 3px;
+}
+footer .columna a:hover {
+    color: #1c2828;
+}
+
+footer .derechos {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/*  RESPONSIVE FOOTER              */
+@media (max-width: 768px) {
+    footer img { 
+        width: 75%; 
+        height: auto;
+    }
+    footer .derechos {font-size: 0.9rem; }
+}
+
+@media (max-width: 576px) {
+    footer { 
+        text-align: left 
+    }
+}

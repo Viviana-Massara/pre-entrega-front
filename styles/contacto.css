@@ -1,0 +1,307 @@
+/* Importo font de  Google Fonts       */ 
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+/* Selector universal    */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #222;
+}
+
+/* HEADER    */
+.header {
+    display: flex;              /*    3 hijos: logo, nav  y mobile*/
+    justify-content: space-between;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:#d37086;
+    font-size: 1.2rem;
+    padding: 25px;
+    position: sticky;
+    top: 0;     
+}
+.header .nav {
+    display: flex;              /*    hijos: elementos de la lista */
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.header .nav li {
+    list-style: none;
+    padding: 0px 30px;
+}
+.header .nav a {
+    text-decoration: none;
+    color: white;
+}
+.header .nav a:hover {              /* PSEUDO-CLASE */
+    color: #1c2828;
+}
+
+.icono_header {
+    font-size: 1.7rem;
+    color: white;
+}
+.icono_header:hover {
+    color: #1c2828;
+}
+
+/* Botón hamburguesa - oculto en desktop, visible en mobile */
+.mobile {
+    display: none;
+    align-items: left;
+}
+
+/*  RESPONSIVE HEADER           */
+@media (max-width: 768px) {
+    .header {
+        gap: 15px;
+        padding: 20px;
+        position: static;
+    }
+    .header .nav {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+    }
+    .mobile .icono_header {
+        font-size: 1.5rem;
+        padding-left: 20px;
+    }
+}
+
+
+/* MAIN  -   CONTACTO     */
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #8e7b89;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid #e1e1e1;
+}
+.contacto-img img {
+    width: 100%;
+    min-height: 400px;
+    max-width: 650px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Campos de texto y área de mensaje */
+.contacto-form input,
+.contacto-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #8e6b72;
+    border-radius: 10px;
+    font-family: inherit;       /*hereda del padre */
+    font-size: 14px;
+}
+.contacto-form textarea{
+    resize:vertical;      /*crece solo verticalmente al usar la flechita para cambiar tamaño */
+     max-height:180px;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus{
+    outline: none;
+    border-color: #0a9389;
+    box-shadow: 0 0 10px rgba(10,147,137,.4);
+}
+
+
+/* Botón de envío */    
+.contacto-form button {
+    background-color: #0a9389;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 8px;
+    align-self:center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.7s ease;
+}
+
+.contacto-form button:hover {
+    background-color: #3abeb5;
+}
+
+/*  RESPONSIVE   CONTACTO            */
+@media (max-width: 768px) {
+    .contacto {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .contacto-img img {
+        min-height: 150px;
+    } 
+    .contacto-form h2 { font-size: 1.4rem; }
+}
+@media (max-width: 576px) {
+    .contacto-form h2 { font-size: 1.2rem; }
+}
+
+
+/*   MENSAJES DE LECTORES      */
+.mensajes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    align-items: stretch;
+}
+.mensaje-card {
+    background-color: #f7f3f3;
+    border: 1px solid #fb60ae;
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.mensaje-card:hover {
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.08);
+    transition: .3s ease;
+    transform: scale(1.03);
+}
+.mensaje-card > p {        /* solo al p directo   */
+    font-style: italic;
+}
+
+.mensaje-lector {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.mensaje-lector img {
+    width: 50px;
+    height: 50px;   
+    border-radius: 50%;
+    object-fit: cover;          /* imagen no se deforma   */ 
+    border: 2px solid #3c7945;
+}
+.mensaje-lector h4 {       
+    margin-bottom: 4px;
+}
+
+/*  RESPONSIVE   MENSAJES DE LECTORES            */
+@media (max-width: 768px) {
+    .mensajes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .mensajes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/*     MAPA UBICACIÓN           */
+.mapa {
+    background-color: ghostwhite;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    overflow: hidden;           /*Oculta todo lo que sobresalga del contenedor.*/
+}
+
+/*  RESPONSIVE   MAPA             */
+/* No se precisa  */
+
+
+/*   FOOTER     */
+footer {
+    display: flex; 
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    background-color:#d37086;
+    color: white;
+    padding: 15px;
+}
+footer .columna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 30px;
+}
+footer .columna h3 { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px 0px;
+} 
+footer .columna p { 
+    margin-bottom: 3px;
+} 
+footer .columna .icono_seguinos {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+footer .columna .icono_seguinos i {
+    padding-right: 10px;
+    cursor: pointer;
+}
+footer .columna .icono_seguinos i:hover {
+   color: #1c2828;
+}
+
+footer .columna a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 3px;
+}
+footer .columna a:hover {
+    color: #1c2828;
+}
+
+footer .derechos {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/*  RESPONSIVE FOOTER              */
+@media (max-width: 768px) {
+    footer img { 
+        width: 75%; 
+        height: auto;
+    }
+    footer .derechos {font-size: 0.9rem; }
+}
+
+@media (max-width: 576px) {
+    footer { 
+        text-align: left 
+    }
+}
