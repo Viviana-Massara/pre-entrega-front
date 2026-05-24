@@ -24,25 +24,6 @@ La aplicación presenta un catálogo de libros clásicos con diseño adaptable a
 * Font Awesome
 * Google Fonts
 
-
-📂 Estructura del proyecto
-```bash
-📦 nikkita-ecommerce
- ┣ 📂 img
- ┃ ┣ 📜 agatha-christie.jpg
- ┃ ┣ 📜 ases-roger.jpg
- ┃ ┣ 📜 ases-orient.jpg
- ┃ ┣ 📜 misterio-caribe.jpg
- ┃ ┣ 📜 muerte-nilo.jpg
- ┃ ┣ 📜 nemesis.jpg
- ┃ ┣ 📜 truco-espejos.jpg
- ┃ ┗ 📜 pay.png
- ┣ 📜 index.html
- ┣ 📜 style.css
- ┗ 📜 README.md
-```
-
-
 🚀 Funcionalidades principales
 
 🧭 Navegación
