@@ -237,8 +237,17 @@ h2 {
 }
 
 /*  RESPONSIVE   MAPA             */
-/* No se precisa  */
+@media (max-width: 768px) {
+    .mapa iframe {
+        height: 350px;
+    }
+}
 
+@media (max-width: 576px) {
+    .mapa iframe {
+        height: 250px;
+    }
+}
 
 /*   FOOTER     */
 footer {
