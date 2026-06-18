@@ -78,66 +78,31 @@ body{
     }
 }
 
-
-/* MAIN  -   HERO     */
-.hero {
-    display: flex;                      /*    2 hijos: imagen y texto */
-    justify-content: space-between; 
-    align-items: center;
-    padding: 0 10px;
-    background: linear-gradient(to right, #eeeded, #dbc6c6); 
-}
-.hero img {
-    width: 50%;
-    max-width: 650px;
-    height: auto;
-}
-.hero .hero-texto {
-    display: flex;                      /*  hijos: cada una de las línas del texto */
+/*==================== BANNER TIENDA ====================*/
+.page-header {
+    background-image: url('../img/devon.jpg');
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    text-align: right;
-    padding: 0px 20px;
-}
-.hero .hero-texto h1 {
-    font-family: "Nosifer", monospace;
-    color: #a80c81;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-.hero .hero-texto h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #a57d9a;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-.hero .hero-texto p {
-    font-size: 1.2rem;
-}
- 
-/*  RESPONSIVE HERO              */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    } 
-    .hero .hero-texto {
-        text-align: center;
-        padding: 20px;
-    }
-    .hero .hero-texto h1 { font-size: 1.7rem; }
-    .hero .hero-texto h2 { font-size: 1.4rem; }
-    .hero .hero-texto p { font-size: 1.1rem; }
+    text-align: center;
+    padding: 14px;
 }
 
-@media (max-width: 576px) {
-    .hero .hero-texto h1 { font-size: 1.5rem; }
-    .hero .hero-texto h2 { font-size: 1.2rem; }
-    .hero .hero-texto p { font-size: 1rem; }
+.page-header h2 {
+    color: #fff;
+    font-size: 1.7rem;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+.page-header p {
+    color: #fff;
+    font-size: 1.3rem;
 }
 
 /* MAIN - PRODUCTOS    */
@@ -172,6 +137,25 @@ body{
 .productos .card-producto h4 {
     margin-top: auto;
 }
+/* ===== Agrego Botón Descripción ====== */
+.btn-descripcion {
+    width: 65%;
+    padding: 8px 0;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: #b5ede8;
+    color: rgb(16, 16, 16);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    /* Qué vamos a afectar, qué tiempo se va a tomar, de qué manera    */
+    transition: background-color 0.7s ease;
+}
+.productos .card-producto .btn-descripcion:hover {
+    background-color: #d3f2ef;
+}
+
+
 .productos .card-producto:hover {
     /*  Sombra eje X, eje Y, desenfoque (blur), color  */
     box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.15);
@@ -202,6 +186,7 @@ body{
 
 /*  RESPONSIVE PRODUCTOS              */
 /* No se precisa  */
+
 
 /*   FOOTER     */
 footer {
