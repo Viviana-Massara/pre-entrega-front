@@ -12,7 +12,7 @@ body{
     background-color: white;
     color: #222;
 }
-
+ 
 /* HEADER    */
 .header {
     display: flex;              /*    3 hijos: logo, nav  y mobile*/
@@ -151,6 +151,7 @@ body{
 .productos .card-producto {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 10px;
@@ -165,9 +166,11 @@ body{
 
 .productos .card-producto img {
     width: 80%;
+    height: 250px;
+    object-fit: contain;
 }
 .productos .card-producto h5 {
-    margin-bottom: 5px;
+    margin: 5px 0px;
 }
 .productos .card-producto h4 {
     margin-top: auto;

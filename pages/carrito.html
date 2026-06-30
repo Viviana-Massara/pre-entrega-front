@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/tienda.css">
-    <title>Nikkita - Talento Tech Ecommerce - Tienda</title>
+    <link rel="stylesheet" href="../styles/carrito.css">
+    <title>Nikkita - Talento Tech Ecommerce - Carrito</title>
 </head>
  
 <body>
@@ -27,11 +27,11 @@
             <!-- Generamos la barra de navegación      -->
             <ul class="nav">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Tienda</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Acerca de</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="carrito.html">
+                <li><a href="#">
                         <i class="fa-solid fa-cart-shopping icono_header"></i>
                     </a>
                 </li>
@@ -47,20 +47,59 @@
         </div>
         
     </header>
+    <main>
 
-    <main> 
-          <!-- ==================== BANNER TIENDA ==================== -->
-        <section class="page-header">
-            <h2>El plan perfecto para hoy...</h2>
-            <p>¡Promoción especial de suspenso por tiempo limitado!</p>
+        <!-- ==================== TABLA CARRITO ==================== -->
+        <section id="cart" class="section-p1">
+            <table width="100%">
+                <!-- Declaramos el encabezado de la tabla     -->
+                <thead>
+                    <tr>
+                        <td>ELIMINAR</td>
+                        <td>IMAGEN</td>
+                        <td>PRODUCTO</td>
+                        <td>PRECIO</td>
+                        <td>CANTIDAD</td>
+                        <td>SUBTOTAL</td>
+                    </tr>
+                </thead>
+                <!-- DE FORMA DINÁMICA CARGAMOS 1 FILA DE ELEMENTOS DEL LOCAL STORAGE -->
+                <tbody id="tabla_carrito"></tbody>
+            </table>
         </section>
 
-         <!-- ==================== PRODUCTOS DINÁMICOS ==================== -->
-        <section class="productos">
-            <div class="card-producto"></div>
+        <!-- ==================== CUPÓN Y TOTAL ==================== -->
+        <section id="cart-add" class="section-p1">
+            <div id="coupon">
+                <h3>Aplicar Cupón</h3>
+                <div>
+                    <input type="text" placeholder="Ingresa tu cupón">
+                    <button class="normal">Aplicar</button>
+                </div>
+            </div>
+            <div id="subtotal">
+                <h3>Total del Carrito</h3>
+                <table>
+                    <tr>
+                        <td>Subtotal del Carrito</td>
+                        <td id="total">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Envío</td>
+                        <td>Gratis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong id="total">$0.00</strong></td>
+                    </tr>
+                </table>
+                <button class="normal">Proceder al pago</button>
+            </div>
         </section>
+
     </main>
 
+    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="columna">
             <h3>Contacto:</h3>
@@ -94,8 +133,8 @@
          
     </footer>
 
-    <!-- Script                       -->
-    <script src="../script/tienda.js"></script>
-    
+    <script src="../script/carrito.js"></script>
 </body>
+
 </html>
+ 

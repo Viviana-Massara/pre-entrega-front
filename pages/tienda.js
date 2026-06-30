@@ -52,10 +52,9 @@ const productos = [
     },
 ];
 */
-// paso 3 tomar el elemento e insertar el array
-const contenedor = document.querySelector('.productos');
 
-fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
+
+fetch("https://fakestoreapi.com/products")
     .then(response => response.json())
     .then(productos => {
         console.log(productos)
@@ -65,31 +64,21 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
 
 // id="btn-agregar-${id}" CADA botón tiene ID diferente -> se puede identificar 
 // qué producto se pulsó
-        const cardsHTML = productos.docs.map((book, index) => {
-
-            // La API de OpenLibrary no te da un ID numérico simple, sino na ruta única  
-            // que identifica al libro dentro de su base de datos. Hay que sacar /
-            const id = book.key.replace(/\//g, "-");
-            const title = book.title;
-
-            const image = book.cover_i
-                ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
-                : "https://via.placeholder.com/150";
-
-            // 🌟 CREAR PRECIO FICTICIO ALEATORIO 
-            const precioFicticio = 100 + (title.length);
+        const cardsHTML = productos.map(
+            ({ id, title, category, price, image }) => {
 
           return `
             <div class="card-producto">
                 <img src="${image}" alt="${title}">
                 <div class="producto-descripcion">
+                    <span>${category}</span>
                     <h5>${title}</h5>
-                    <h4>$${precioFicticio.toFixed(2)}</h4>
+                    <h4>$${price.toFixed(2)}</h4>
                 </div>
                 <button class="btn-descripcion">
                     Ver descripción
                 </button>
-                <a id="btn-agregar-${id}" class="agregar" data-precio="${precioFicticio}">
+                <a id="btn-agregar-${id}" class="agregar">
                     <i class="fa-solid fa-cart-shopping"></i> Agregar
                 </a>
             </div>
@@ -99,9 +88,12 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
 
         // Método JOIN no le paso ningun caracter ni cadena para separar
         contenedor.innerHTML = cardsHTML.join('');
-        adjuntarEventos(productos.docs);              // adjuntar evento a botones
+        adjuntarEventos(productos);              // adjuntar evento a botones
+
     })
 
+// paso 3 tomar el elemento e insertar el array
+const contenedor = document.querySelector('.productos');
 
 // ----------------------------------------------- //
 // Paso 1 — Función para agregar al carrito
@@ -121,7 +113,6 @@ function agregarAlCarrito(producto) {
         carrito.push({
             id: producto.id,
             title: producto.title,   // guardamos en inglés para compatibilidad con la API
-            //price: producto.price,
             price: producto.price,
             image: producto.image,
             cantidad: 1
@@ -137,23 +128,10 @@ function agregarAlCarrito(producto) {
 // Paso 2 — Adjuntar eventos LUEGO DE QUE SE CARGUE LAS CARDS EN EL DOM.
 function adjuntarEventos(productos) {
     productos.forEach(producto => {
-        const idHTML = producto.key.replace(/\//g, "-");
-        const boton = document.getElementById(`btn-agregar-${idHTML}`);
-
+        const boton = document.getElementById(`btn-agregar-${producto.id}`);
         if (boton) {
             boton.addEventListener('click', () => {
-                // 🌟 LEER EL PRECIO DESDE EL BOTÓN HTML
-                const precioDelLibro = parseFloat(boton.dataset.precio);
-
-                agregarAlCarrito({
-                    id: idHTML,
-                    title: producto.title,
-                    price: precioDelLibro,
-                    image: producto.cover_i
-                        ? `https://covers.openlibrary.org/b/id/${producto.cover_i}-L.jpg`
-                        : "https://via.placeholder.com/150"
-
-                    });
+                agregarAlCarrito(producto);
             });
         }
     });
