@@ -25,7 +25,7 @@
         
         <div>
             <!-- Generamos la barra de navegación      -->
-            <ul class="nav">
+            <ul id="navbar" class="nav">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="tienda.html">Tienda</a></li>
                 <li><a href="#">Blog</a></li>
@@ -35,6 +35,9 @@
                         <i class="fa-solid fa-cart-shopping icono_header"></i>
                     </a>
                 </li>
+                <a href="#" id="close" class="close">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                </a>
             </ul>
         </div>
 
@@ -43,7 +46,7 @@
             <a href="#">
                 <i class="fa-solid fa-cart-shopping icono_header"></i>
             </a>
-            <i class="fas fa-outdent icono_header"></i>
+            <i id="bar" class="fa-solid fa-outdent icono_header"></i>
         </div>
         
     </header>
@@ -133,7 +136,9 @@
          
     </footer>
 
+    <script src="../script.js"></script>
     <script src="../script/carrito.js"></script>
+
 </body>
 
 </html>

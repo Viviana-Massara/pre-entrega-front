@@ -26,7 +26,7 @@
 }
 
 /* ===== Agrego Botón Descripción ====== */
-.btn-descripcion {
+.ver-descripcion {
     width: 65%;
     padding: 8px 0;
     margin-top: 12px;
@@ -39,6 +39,6 @@
     /* Qué vamos a afectar, qué tiempo se va a tomar, de qué manera    */
     transition: background-color 0.7s ease;
 }
-.btn-descripcion:hover {
+.ver-descripcion:hover {
     background-color: #d3f2ef;
 }

@@ -24,7 +24,7 @@
         
         <div>
             <!-- Generamos la barra de navegación      -->
-            <ul class="nav">
+            <ul id="navbar" class="nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="pages/tienda.html">Tienda</a></li>
                 <li><a href="#">Blog</a></li>
@@ -34,19 +34,22 @@
                         <i class="fa-solid fa-cart-shopping icono_header"></i>
                     </a>
                 </li>
+                <a href="#" id="close" class="close">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                </a>                
             </ul>
         </div>
-
+ 
         <!-- Versión mobile: ícono hamburguesa -->
         <div class="mobile">
-            <a href="#">
+            <a href="pages/carrito.html">
                 <i class="fa-solid fa-cart-shopping icono_header"></i>
             </a>
-            <i class="fas fa-outdent icono_header"></i>
+            <i id="bar" class="fa-solid fa-outdent icono_header"></i>
         </div>
         
     </header>
- 
+
     <main>
         <section class="hero">
             <img title="Agatha Christie en su escritorio" src="img/agatha-christie.jpg" alt="Agatha 
@@ -63,8 +66,9 @@
             <div class="card-producto">
                 <img class="imagen" src="img/ases-roger.jpg" alt="Portada del libro Asesinato de Roger Ackroyd">
                 <h5>EL ASESINATO DE ROGER ACKROYD</h5>
-                <h4>$22.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$130.-</h4>
+                <a href="#" class="agregar" data-nombre="EL ASESINATO DE ROGER ACKROYD" data-precio="130"
+                        data-imagen="../img/ases-roger.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
@@ -72,8 +76,9 @@
             <div class="card-producto">
                 <img src="img/ases-orient.jpg" alt="Portada del libro Asesinato en el Oriente Express">
                 <h5>ASESINATO EN EL ORIENT EXPRESS</h5>
-                <h4>$28.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$132.-</h4>
+                <a href="#" class="agregar" data-nombre="ASESINATO EN EL ORIENT EXPRESS" data-precio="132"
+                        data-imagen="../img/ases-orient.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
@@ -81,8 +86,9 @@
             <div class="card-producto">
                 <img src="img/misterio-caribe.jpg" alt="Portada del libro Misterio en el Caribe">
                 <h5>MISTERIO EN EL CARIBE</h5>
-                <h4>$29.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$131.-</h4>
+                <a href="#" class="agregar" data-nombre="MISTERIO EN EL CARIBE" data-precio="131"
+                        data-imagen="../img/misterio-caribe.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
@@ -90,8 +96,9 @@
             <div class="card-producto">
                 <img src="img/muerte-nilo.jpg" alt="Portada del libro Muerte en el Nilo">
                 <h5>MUERTE EN EL NILO</h5>
-                <h4>$25.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$135.-</h4>
+                <a href="#" class="agregar" data-nombre="MUERTE EN EL NILO" data-precio="135"
+                        data-imagen="../img/muerte-nilo.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
@@ -99,8 +106,9 @@
             <div class="card-producto">
                 <img src="img/nemesis.jpg" alt="Portada del libro Nemesis">
                 <h5>NÉMESIS</h5>
-                <h4>$33.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$132.-</h4>
+                <a href="#" class="agregar" data-nombre="NÉMESIS" data-precio="132"
+                        data-imagen="../img/nemesis.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
@@ -108,14 +116,19 @@
             <div class="card-producto">
                 <img src="img/truco-espejos.jpg" alt="Portada del libro El truco de los espejos">
                 <h5>EL TRUCO DE LOS ESPEJOS</h5>
-                <h4>$23.000.-</h4>
-                <a href="#" class="agregar">
+                <h4>$135.-</h4>
+                <a href="#" class="agregar" data-nombre="EL TRUCO DE LOS ESPEJOS" data-precio="135"
+                        data-imagen="../img/truco-espejos.jpg">
                         <i class="fa-solid fa-cart-shopping"></i>Agregar
                 </a>
             </div>
 
         </section>
 
+        <div id="toast" class="toast-custom">
+            <span id="toastMensaje"></span>
+            <button id="btnCerrarToast">✕</button>
+        </div>
     </main>
 
     <footer>
@@ -150,6 +163,10 @@
         </div>
          
     </footer>
-    
+
+    <script src="script.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/toast.js"></script>
+
 </body>
 </html>

@@ -8,51 +8,12 @@ const productos = [
         categoria: 'Celulares',
         precio: 22000,
         imagen: "../img/ases-roger.jpg",
-        descripcion: 'Pantalla AMOLED, cámara de 108MP y batería de larga duración.'
+        descripcion: 'Misterio.'
     },
-    {
-        id: 2,
-        nombre: 'ASESINATO EN EL ORIENT EXPRESS',
-        categoria: 'Audio',
-        precio: 28000,
-        imagen: '../img/ases-orient.jpg',
-        descripcion: 'Cancelación de ruido activa y hasta 30hs de autonomía.'
-    },
-    {
-        id: 3,
-        nombre: 'MISTERIO EN EL CARIBE',
-        categoria: 'Moda',
-        precio: 29000,
-        imagen: '../img/misterio-caribe.jpg',
-        descripcion: 'Tela 100% algodón con estampado de alta definición.'
-    },
-    {
-        id: 4,
-        nombre: 'MUERTE EN EL NILO',
-        categoria: 'Moda',
-        precio: 25000,
-        imagen: '../img/muerte-nilo.jpg',
-        descripcion: 'Resistente al agua, ideal para actividades al aire libre.'
-    },
-    {
-        id: 5,
-        nombre: 'NÉMESIS',
-        categoria: 'Tablets',
-        precio: 33000,
-        imagen: '../img/nemesis.jpg',
-        descripcion: 'Pantalla Full HD, 4GB RAM y 64GB de almacenamiento.'
-    },
-    {
-        id: 6,
-        nombre: 'EL TRUCO DE LOS ESPEJOS',
-        categoria: 'Accesorios',
-        precio: 23000,
-        imagen: '../img/truco-espejos.jpg',
-        descripcion: 'Mouse, teclado y auriculares gaming en un solo kit.'
-    },
+    Seguir cargando demás cards..... 
 ];
 */
-// paso 3 tomar el elemento e insertar el array
+// Tomar el elemento e insertar el array
 const contenedor = document.querySelector('.productos');
 
 fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
@@ -60,7 +21,7 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
     .then(productos => {
         console.log(productos)
 
-// paso 2 Crear el html de cada card
+// Crear el html de cada card
 // usar map para recorrer el array y generar el HTML
 
 // id="btn-agregar-${id}" CADA botón tiene ID diferente -> se puede identificar 
@@ -78,7 +39,7 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
 
             // 🌟 CREAR PRECIO FICTICIO ALEATORIO 
             const precioFicticio = 100 + (title.length);
-
+            
           return `
             <div class="card-producto">
                 <img src="${image}" alt="${title}">
@@ -86,7 +47,7 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
                     <h5>${title}</h5>
                     <h4>$${precioFicticio.toFixed(2)}</h4>
                 </div>
-                <button class="btn-descripcion">
+                <button id="btn-ver-${id}" class="ver-descripcion">
                     Ver descripción
                 </button>
                 <a id="btn-agregar-${id}" class="agregar" data-precio="${precioFicticio}">
@@ -96,7 +57,7 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
         `;
 
             });
-
+        
         // Método JOIN no le paso ningun caracter ni cadena para separar
         contenedor.innerHTML = cardsHTML.join('');
         adjuntarEventos(productos.docs);              // adjuntar evento a botones
@@ -130,7 +91,8 @@ function agregarAlCarrito(producto) {
 
     // Guardar el carrito actualizado
     localStorage.setItem('carritoDeCompras', JSON.stringify(carrito));
-    alert(`${producto.title} agregado al carrito!`);
+    // función que está en otro archivo de igual raíz
+    mostrarToast(`${producto.title} agregado al carrito!`);
 }
 
 
@@ -138,8 +100,8 @@ function agregarAlCarrito(producto) {
 function adjuntarEventos(productos) {
     productos.forEach(producto => {
         const idHTML = producto.key.replace(/\//g, "-");
-        const boton = document.getElementById(`btn-agregar-${idHTML}`);
 
+        const boton = document.getElementById(`btn-agregar-${idHTML}`);
         if (boton) {
             boton.addEventListener('click', () => {
                 // 🌟 LEER EL PRECIO DESDE EL BOTÓN HTML
@@ -156,6 +118,36 @@ function adjuntarEventos(productos) {
                     });
             });
         }
+
+        const btnVer = document.getElementById(`btn-ver-${idHTML}`);
+        if (btnVer) {
+            btnVer.addEventListener('click', () => {
+                abrirModal(producto);
+            })
+        }
+
     });
 }
 
+function abrirModal(producto) {
+    const anio = producto.first_publish_year || "Desconocido";
+
+    document.getElementById('modalTitulo').textContent = producto.title;
+    document.getElementById('modalAnioPublicación').textContent = anio;
+    document.getElementById('modalTemática').textContent = producto.edition_count;
+    document.getElementById('overlayModal').classList.add('visible');
+}
+
+function cerrarModal() {
+    document.getElementById('overlayModal').classList.remove('visible');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('btnCerrarModal').addEventListener('click', cerrarModal);
+    /* Pueda cerrar también haciendo clic afuera del recuadro     */
+    document.getElementById('overlayModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('overlayModal')) {
+            cerrarModal();
+        }
+    })
+})
