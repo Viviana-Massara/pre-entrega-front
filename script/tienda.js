@@ -28,7 +28,7 @@ fetch("https://openlibrary.org/search.json?author=Agatha+Christie")
 // qué producto se pulsó
         const cardsHTML = productos.docs.map((book, index) => {
 
-            // La API de OpenLibrary no te da un ID numérico simple, sino na ruta única  
+            // La API de OpenLibrary no te da un ID numérico simple, sino una ruta única  
             // que identifica al libro dentro de su base de datos. Hay que sacar /
             const id = book.key.replace(/\//g, "-");
             const title = book.title;

@@ -73,6 +73,35 @@ h2 {
     background-color: #3abeb5;
 }
 
+/* Contenedor de cada campo (input + mensaje de error) */
+.campo-control {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Borde rojo cuando el campo tiene error (forzamos estilo y grosor)  */
+.campo-control.error input,
+.campo-control.error textarea {
+    border-color: #ff0000;
+    background-color: #faf3f3;
+}
+
+/* Mensaje de error - oculto por defecto */
+.campo-control .texto-error {
+    color: #ff0000;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* Se muestra cuando el campo tiene la clase error */
+.campo-control.error .texto-error {
+    display: block;
+}
+
+
 /*  RESPONSIVE   CONTACTO            */
 @media (max-width: 768px) {
     .contacto {

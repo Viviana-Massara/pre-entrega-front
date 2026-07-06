@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
- 
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,20 +63,27 @@
                 <h2>Por recomendaciones, consultas o pistas... escribinos: </h2>
 
                 <!-- Formulario de contacto           -->
-                <form action="https://formspree.io/f/xbdpeokp" method="POST" autocomplete="on"
-                target="_blank" id="formularioContacto">
+                <form action="https://formspree.io/f/xbdpeokp" method="POST" id="formularioContacto">
                     
                     <!-- Nombre             -->
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." 
-                    required>
+                    <div class="campo-control">
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre...">
+                        <div class="texto-error"></div>
+                    </div>
 
                     <!-- Correo electrónico -->
-                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico..."
-                    required>
+                    <div class="campo-control">
+                        <input type="text" id="email" name="email" 
+                        placeholder="Tu correo electrónico...">
+                        <div class="texto-error"></div>
+                    </div>
 
                     <!-- Mensaje               -->
-                    <textarea id="mensaje" name="mensaje" rows="7"
-                    placeholder="Tu mensaje..." required></textarea>
+                    <div class="campo-control">
+                        <textarea id="mensaje" name="mensaje" rows="7"
+                        placeholder="Tu mensaje..."></textarea>
+                        <div class="texto-error"></div>
+                    </div>
 
                     <button type="submit">Enviar Mensaje</button>
                 </form>
@@ -170,6 +177,7 @@
     
     <script src="../script.js"></script>
     <script src="../script/contacto.js"></script>
+    <script src="../script/contactoValidacion.js"></script>
     
 </body>
 </html>

@@ -53,7 +53,6 @@ formulario.addEventListener('submit', () => {
     // Vacía el <textarea> en la página.
     
     sessionStorage.removeItem('contacto_mensaje');
-    campoMensaje.value = '';
     
     // No limpiamos localStorage: nombre y correo se mantienen
     // para que el usuario no los tenga que escribir de nuevo
