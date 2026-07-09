@@ -121,14 +121,18 @@ body{
 }
 
 .modal-custom {
-    background: #fff;
-    border-radius: 25px;
-    padding: 30px;
+    background: #eef4aa;
+    border-radius: 45px;
+    border: 3px solid #d37086;
+    box-shadow:
+        0 0 0 6px #eef4aa,
+        0 0 0 8px #d37086;
+    padding: 25px;
     max-width: 480px;
-    min-width: 220px;
+    min-width: 270px;
     width: 30%;
     text-align: center;
-    position: relative;
+    position: relative; 
 }
 
 .modal-custom h5 {
@@ -182,6 +186,7 @@ body{
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
         transition: 0.3s;
+        z-index: 1000;
     }
 
     .header .nav li {

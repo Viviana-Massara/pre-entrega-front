@@ -77,4 +77,10 @@
     .slide img {
         object-fit: cover;
     }
+    .texto-slide h2 {
+        font-size: 13px;
+    }
+    .texto-slide p {
+        font-size: 10px;
+    }
 }

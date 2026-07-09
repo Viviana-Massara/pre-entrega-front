@@ -196,3 +196,62 @@ h2 {
         height: 250px;
     }
 }
+
+
+
+/* ========================================================================= */
+/* MODO OSCURO PARA LA PÁGINA DE CONTACTO                                    */
+/* ========================================================================= */
+
+/* 1. Cambios generales del fondo y títulos */
+body.dark-mode {
+    background-color: #222222;
+    color: #f5f5f5;
+}
+
+body.dark-mode h2 {
+    color: #bfaab9; /* Aclaramos un poco tu color #8e7b89 para que contraste en fondo oscuro */
+}
+
+/* 2. Sección del Formulario de Contacto */
+body.dark-mode .contacto {
+    background-color: #1e1e1e;
+    border-color: #333333;
+}
+
+body.dark-mode .contacto-form input,
+body.dark-mode .contacto-form textarea {
+    background-color: #464545;
+    color: #ffffff;
+    border-color: #bc979f; /* Mantiene tu estilo pero con un tono ligeramente más visible */
+}
+
+/* Cambiar el color del texto de sugerencia (placeholder) */
+body.dark-mode .contacto-form input::placeholder,
+body.dark-mode .contacto-form textarea::placeholder {
+    color: #aaaaaa;
+}
+
+/* Si hay un error en modo oscuro, suavizamos el fondo rojo para que no lastime los ojos */
+body.dark-mode .campo-control.error input,
+body.dark-mode .campo-control.error textarea {
+    border-color: #ff4d4d;
+    background-color: #2c1a1a;
+}
+
+/* 3. Tarjetas de Mensajes de los Lectores */
+body.dark-mode .mensaje-card {
+    background-color: #4c4b4b;
+    border-color: #fb60ae; /* Mantiene tu borde rosa característico */
+    color: #e0e0e0;
+}
+
+body.dark-mode .mensaje-card:hover {
+    box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.05); /* Sombra clara para fondo oscuro */
+}
+
+/* 4. Sección del Mapa */
+body.dark-mode .mapa {
+    background-color: #1a1a1a; /* Cambia el ghostwhite por un tono oscuro */
+}
+

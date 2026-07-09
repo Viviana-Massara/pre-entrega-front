@@ -59,3 +59,39 @@ formulario.addEventListener('submit', () => {
 });
 
 
+
+
+// =========================================================================
+// Paso 5 — Funcionalidad de Modo Oscuro (Adicional)
+// =========================================================================
+
+// Como necesitamos interactuar con el botón apenas la página esté lista,
+// agrupamos la lógica dentro de un evento de carga o la sumamos al DOMContentLoaded.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnDarkMode = document.getElementById("toggle-darkmode");
+    const iconoModo = document.getElementById("icono-modo");
+
+    // Validamos que el botón exista en la página antes de agregar los eventos
+    if (btnDarkMode && iconoModo) {
+        
+        // 1. Verificar si ya estaba activado en este navegador (Persistencia)
+        if (localStorage.getItem("contacto-oscuro") === "activado") {
+            document.body.classList.add("dark-mode");
+            iconoModo.classList.replace("fa-moon", "fa-sun");
+        }
+
+        // 2. Escuchar el click del usuario para alternar el modo
+        btnDarkMode.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            
+            if (document.body.classList.contains("dark-mode")) {
+                iconoModo.classList.replace("fa-moon", "fa-sun");
+                localStorage.setItem("contacto-oscuro", "activado");
+            } else {
+                iconoModo.classList.replace("fa-sun", "fa-moon");
+                localStorage.setItem("contacto-oscuro", "desactivado");
+            }
+        });
+    }
+});

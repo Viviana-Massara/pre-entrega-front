@@ -21,10 +21,11 @@ La aplicación presenta un catálogo de libros clásicos con diseño adaptable a
 * Sistema de carrito completamente funcional
 * Agregar productos al carrito con atributos data
 * Notificaciones Toast personalizadas
-* Modal custom para mensajes
+* Modal custom para descripciones
 * Página de tienda dedicada
 * Página de contacto con validación de datos
 * Visualización y gestión del carrito
+* Carrusel de imágenes
 
 🧭 Navegación
 * Menú desktop con links activos
@@ -40,7 +41,7 @@ La aplicación presenta un catálogo de libros clásicos con diseño adaptable a
 * JavaScript (DOM manipulation, Event Listeners)
 * Font Awesome (6.5.1)
 * Google Fonts
-* LocalStorage y SessionStorage (para persistencia del carrito)
+* LocalStorage y SessionStorage (para persistencia del carrito y contacto)
 
 🚀 Funcionalidades principales detalladas
 
@@ -87,6 +88,7 @@ El sitio está completamente optimizado para:
 
 Con media queries específicas para cada punto de corte y menú hamburguesa adaptado para pantallas pequeñas.
 
+************************************************************************************************
 
 💾 INFO PARA EL PROFE: 
 
@@ -94,7 +96,11 @@ Con media queries específicas para cada punto de corte y menú hamburguesa adap
 2. Dado que la API de OpenLibrary no da un ID numérico simple, sino una ruta única que identifica al libro dentro de su base de datos, se debe reemplazar el caracter "/" para poder usarlo (Pedí ayuda a la IA). 
 3. Dado que en la API no figura el precio, creé un precio ficticio para cada libro. 
 4. Dado que en la API no figura la categoría decidí mostrar en el modal, el Año de Publicación y Cantidad de Ediciones del libro.
-5. Todas las funcionalidades que trabajamos en clase están implementadas. Además reemplacé el Alert de la página de Tienda por el mensaje usado en Home. 
+5. Todas las funcionalidades que trabajamos en clase están implementadas. Al enviar una consulta desde la página de Contacto llegará a mi mail registrado en FormSpree. 
+6. Reemplacé el Alert de la página de Tienda por el toast usado en Home. 
+7. Carrito: se puede probar el botón Proceder al Pago, motrará Toast dependiendo si el mismo está vacío o con productos. Para confirmar usé el Alert. Al proceder al pago vaciará el carrito.
+8. Implementé la página de Blog: mostrará un carrusel con imágenes de lugares típicos de las novelas. Al cargar mostrará siempre como primero el slide con índice 0.
+9. Agregué Modo Oscuro/Claro solo para la página de Contacto. Para recordar la preferencia seleccionada utilicé Local Storage. 
 
 
 👩‍💻 Autora
