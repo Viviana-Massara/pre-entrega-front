@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
- 
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/carrito.css">
-    <title>Nikkita - Talento Tech Ecommerce - Carrito</title>
+    <link rel="stylesheet" href="../styles/blog.css">
+    <title>Nikkita - Talento Tech Ecommerce - Blog</title>
 </head>
  
 <body>
@@ -28,85 +28,86 @@
             <ul id="navbar" class="nav">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="tienda.html">Tienda</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#">Acerca de</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="#">
+                <li><a href="carrito.html">
                         <i class="fa-solid fa-cart-shopping icono_header"></i>
                     </a>
                 </li>
                 <a href="#" id="close" class="close">
                     <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
-                </a>
+                </a> 
             </ul>
         </div>
 
         <!-- Versión mobile: ícono hamburguesa -->
         <div class="mobile">
-            <a href="#">
+            <a href="carrito.html">
                 <i class="fa-solid fa-cart-shopping icono_header"></i>
             </a>
             <i id="bar" class="fa-solid fa-outdent icono_header"></i>
         </div>
         
     </header>
+ 
     <main>
+        <section class="carrusel">
 
-        <!-- ==================== TABLA CARRITO ==================== -->
-        <section id="cart" class="section-p1">
-            <table width="100%">
-                <!-- Declaramos el encabezado de la tabla     -->
-                <thead>
-                    <tr>
-                        <td>ELIMINAR</td>
-                        <td>IMAGEN</td>
-                        <td>PRODUCTO</td>
-                        <td>PRECIO</td>
-                        <td>CANTIDAD</td>
-                        <td>SUBTOTAL</td>
-                    </tr>
-                </thead>
-                <!-- DE FORMA DINÁMICA CARGAMOS 1 FILA DE ELEMENTOS DEL LOCAL STORAGE -->
-                <tbody id="tabla_carrito"></tbody>
-            </table>
-        </section>
-
-        <!-- ==================== CUPÓN Y TOTAL ==================== -->
-        <section id="cart-add" class="section-p1">
-            <div id="coupon">
-                <h3>Aplicar Cupón</h3>
-                <div>
-                    <input type="text" placeholder="Ingresa tu cupón">
-                    <button class="normal">Aplicar</button>
+            <div class="slide activo">
+                <img src="../img/london.jpeg" alt="London">
+                <div class="texto-slide">
+                    <h2>London, UK</h2>
+                    <p>Lugar de residencia de Agahta Christie.</p>
                 </div>
             </div>
-            <div id="subtotal">
-                <h3>Total del Carrito</h3>
-                <table>
-                    <tr>
-                        <td>Subtotal del Carrito</td>
-                        <td id="total">$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Envío</td>
-                        <td>Gratis</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total</strong></td>
-                        <td><strong id="total">$0.00</strong></td>
-                    </tr>
-                </table>
-                <button id="btn-pagar" class="normal">Proceder al pago</button>
+
+            <div class="slide">
+                <img src="../img/egypt.jpeg" alt="Egypt">
+                <div class="texto-slide">
+                    <h2>Luxor and Aswan, Egypt</h2>
+                    <p>Estos viajes dieron origen a "Muerte en el Nilo".</p>
+                </div>
             </div>
+
+            <div class="slide">
+                <img src="../img/turkey.jpeg" alt="Turkey">
+                <div class="texto-slide">
+                    <h2>Istanbul, Turkey</h2>
+                    <p>El tren inmortalizado en "Asesinato en el Orient Express".</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="../img/cape.jpeg" alt="CapeTown">
+                <div class="texto-slide">
+                    <h2>Cape Town, South Africa</h2>
+                    <p>"El hombre del traje marrón", thriller ambientado en esta ciudad.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="../img/barbados.jpeg" alt="Barbados">
+                <div class="texto-slide">
+                    <h2>Barbados </h2>
+                    <p>Miss Marple solo viajó fuera de Gran Bretaña una vez.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="../img/petra.jpeg" alt="Petra">
+                <div class="texto-slide">
+                    <h2>Petra, Jordan</h2>
+                    <p>Escenario de un asesinato en "Cita con la Muerte".</p>
+                </div>
+            </div>
+
+            <button id="anterior">❮</button>
+            <button id="siguiente">❯</button>
         </section>
-        
-        <div id="toast" class="toast-custom">
-            <span id="toastMensaje"></span>
-            <button id="btnCerrarToast">✕</button>
-        </div>
+               
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="columna">
             <h3>Contacto:</h3>
@@ -139,12 +140,9 @@
         </div>
          
     </footer>
-
+    
     <script src="../script.js"></script>
-    <script src="../script/carrito.js"></script>
-    <script src="../script/toast.js"></script>
-
+    <script src="../script/blog.js"></script>
+    
 </body>
-
 </html>
- 

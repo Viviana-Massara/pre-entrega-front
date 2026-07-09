@@ -23,7 +23,8 @@ body{
     font-size: 1.2rem;
     padding: 25px;
     position: sticky;
-    top: 0;     
+    top: 0;    
+    z-index: 1000; 
 }
 .header .nav {
     display: flex;              /*    hijos: elementos de la lista */

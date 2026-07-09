@@ -73,6 +73,15 @@
     font-size: 13px;
 }
 
+#cart table tbody td.carrito-vacio {
+    text-align: center;
+    padding: 20px;
+    font-size: 17px;
+    color: #171c7a;
+    font-weight: bold;
+    font-style: italic;
+}
+
 /* Remove Button Styling */
 .remove-btn {
     background-color: transparent;

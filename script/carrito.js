@@ -23,9 +23,9 @@ function cargarProductosCarrito() {
         // Carrito vacío
         tabla.innerHTML = `
             <tr>
-                <td colspan="6" style="text-align: center; padding: 20px;">
+                <td colspan="6" class="carrito-vacio">
                     Tu carrito está vacío. Agregá productos desde la 
-                    <a href="tienda.html">tienda</a>.
+                    <a href="tienda.html">Tienda</a>.
                 </td>
             </tr>`;
     } else {
@@ -130,4 +130,22 @@ function recalcularTotales() {
     });
 
     actualizarTotal(subtotal);
+}
+
+document.getElementById("btn-pagar").addEventListener("click", procederPago);
+
+function procederPago() {
+    const carrito = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
+
+    if (carrito.length === 0) {
+        mostrarToast("Tu carrito está vacío.");
+        return;
+    }
+
+    if (confirm("¿Desea confirmar la compra?")) {
+        mostrarToast("¡Compra realizada con éxito!");
+
+        localStorage.removeItem("carritoDeCompras");
+        cargarProductosCarrito();
+    }
 }
